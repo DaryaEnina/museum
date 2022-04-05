@@ -1,0 +1,98 @@
+.art-gallery {
+  width: 100%;
+  background: #030303;
+  .art-gallery-wrapper {
+    @include wrapper();
+    height: 2200px;
+    padding-top: 75px;
+    overflow: hidden;
+    @media screen and (max-width: 1024px) {
+      max-width: 984px;
+      height: 1460px;
+      padding-top: 60px;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 728px;
+      padding-top: 40px;
+      height: 1220px;
+    }
+    @media screen and (max-width: 420px) {
+      max-width: 380px;
+      height: 757px;
+    }
+    h2 {
+      @include forum($font-size: 80px, $color: #ffffff, $line-height: 90px);
+      margin-bottom: 75px;
+      transform: translate(-100%, 0px);
+      opacity: 0;
+      transition: all 0.8s ease 0s;
+      &._active {
+        transform: translate(0px, 0px);
+        opacity: 1;
+      }
+      @media screen and (max-width: 1024px) {
+        font-size: 50px;
+        line-height: 75px;
+        margin-bottom: 60px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+        line-height: 60px;
+        margin-bottom: 40px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+    .gallery {
+      columns: 3;
+      column-gap: 36px;
+      @media screen and (max-width: 768px) {
+        columns: 2;
+        column-gap: 24px;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        max-width: 1440px;
+        width: 100%;
+        height: 1960px;
+        z-index: 2;
+        background: linear-gradient(0deg, black 1%, rgba(255, 255, 255, 0) 40%);
+        @media screen and (max-width: 1024px) {
+          height: 1265px;
+          max-width: 984px;
+        }
+        @media screen and (max-width: 420px) {
+          max-width: 380px;
+          height: 757px;
+        }
+      }
+      .gallery-img {
+        margin-bottom: 24px;
+        width: 100%;
+        transform: translate(0px, 50%);
+        opacity: 0;
+        transition: all 0.8s ease 0s;
+        &._active {
+          transform: translate(0px, 0px);
+          opacity: 1;
+        }
+        @media screen and (max-width: 1024px) {
+          max-width: 304px;
+        }
+        @media screen and (max-width: 768px) {
+          max-width: 352px;
+        }
+        @media screen and (max-width: 420px) {
+          max-width: 178px;
+        }
+      }
+    }
+  }
+}
+.gallery :nth-child(11),
+.gallery :nth-child(1) {
+  padding-top: 50px;
+}

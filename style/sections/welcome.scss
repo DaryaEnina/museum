@@ -1,0 +1,330 @@
+.welcome {
+  width: 100%;
+  background: #030303;
+  .welcome_bg {
+    max-width: 1920px;
+    height: 100%;
+    margin: 0 auto;
+    .welcome_wrapper {
+      @include wrapper();
+      display: flex;
+      @media screen and (max-width: 1024px) {
+        max-width: 984px;
+        height: 585px;
+      }
+      @media screen and (max-width: 768px) {
+        max-width: 728px;
+        flex-wrap: wrap;
+        height: 861px;
+      }
+      @media screen and (max-width: 420px) {
+        max-width: 380px;
+        height: 535px;
+      }
+      .welcom_title {
+        padding-top: 145px;
+        z-index: 2;
+        position: absolute;
+        transform: translate(-100%, 0px);
+        opacity: 0;
+        transition: all 0.8s ease 0s;
+        &._active {
+          transform: translate(0px, 0px);
+          opacity: 1;
+        }
+        @media screen and (max-width: 1024px) {
+          padding-top: 50px;
+          &.hide {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 768px) {
+          position: static;
+          padding-top: 0px;
+          margin: 0 auto;
+          &.hide {
+            display: block;
+          }
+        }
+        @media screen and (max-width: 420px) {
+          padding-top: 0px;
+          &.hide {
+            display: block;
+          }
+        }
+
+        h2 {
+          margin: 0 auto;
+          @include forum($color: #ffffff);
+          margin-bottom: 26px;
+          @media screen and (max-width: 1024px) {
+            font-size: 50px;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 40px;
+            line-height: 60px;
+            text-align: center;
+          }
+          @media screen and (max-width: 420px) {
+            font-size: 28px;
+            line-height: 40px;
+          }
+        }
+        .welcome-p {
+          @include roboto(300, 28px, 33px, 2px, #ffffff);
+          margin-bottom: 76px;
+          @media screen and (max-width: 1024px) {
+            font-size: 24px;
+            line-height: 28px;
+            margin-bottom: 50px;
+          }
+          @media screen and (max-width: 768px) {
+            font-size: 20px;
+            line-height: 23px;
+          }
+          @media screen and (max-width: 420px) {
+            font-size: 16px;
+            line-height: 19px;
+            margin-bottom: 5px;
+          }
+        }
+        .welcome_button {
+          width: 360px;
+          height: 75px;
+          background: #710707;
+          border-radius: 10px;
+          box-sizing: border-box;
+          border: unset;
+          cursor: pointer;
+          padding: 22px 0px;
+          text-align: center;
+          @media screen and (max-width: 1024px) {
+            width: 300px;
+            height: 60px;
+            padding: 15x 0px;
+          }
+          @media screen and (max-width: 768px) {
+            display: none;
+          }
+          &:hover {
+            background: #9d8665;
+            transition: 1s;
+          }
+          a {
+            @include roboto(200, 22px, 26px, 2px, #ffffff);
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+.swiper {
+  width: 1000px;
+  height: 810px;
+  margin-right: unset;
+  position: static;
+  @media screen and (max-width: 1024px) {
+    width: 700px;
+    height: 585px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 728px;
+    height: 646px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 380px;
+    height: 345px;
+    padding-top: 8px;
+  }
+  &::before {
+    width: 1000px;
+    height: 751px;
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+      90deg,
+      rgb(0, 0, 0) 5%,
+      rgba(255, 255, 255, 0) 20%
+    );
+    z-index: 2;
+    pointer-events: none;
+    @media screen and (max-width: 1024px) {
+      width: 700px;
+      height: 585px;
+    }
+    @media screen and (max-width: 420px) {
+      width: 380px;
+      height: 285px;
+      left: 0px;
+    }
+  }
+  .swiper-wrapper {
+    width: 1000px;
+    height: 750px;
+    @media screen and (max-width: 1024px) {
+      width: 700px;
+      height: 525px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 728px;
+      height: 546px;
+    }
+    @media screen and (max-width: 420px) {
+      width: 380px;
+      height: 285px;
+    }
+  }
+  .swiper-slide {
+    width: 1000px;
+    height: 750px;
+  }
+  .swiper-slide img {
+    width: 100%;
+    object-fit: cover;
+    @media screen and (max-width: 1024px) {
+      width: 700px;
+      height: 525px;
+    }
+    @media screen and (max-width: 1024px) {
+      width: 728px;
+      height: 546px;
+    }
+    @media screen and (max-width: 420px) {
+      width: 380px;
+      height: 285px;
+    }
+  }
+  .slider-navigation {
+    position: relative;
+    width: 600px;
+    height: 120px;
+    top: -62px;
+    margin-left: auto;
+    background-color: #030303;
+    z-index: 3;
+    display: flex;
+    align-items: baseline;
+    padding-top: 41px;
+    padding-right: 75px;
+    padding-left: 75px;
+    justify-content: space-between;
+    @media screen and (max-width: 1024px) {
+      padding-top: 30px;
+      padding-left: 75px;
+    }
+    @media screen and (max-width: 768px) {
+      top: 0px;
+      padding-top: 26px;
+      padding-left: 127px;
+      padding-right: 39px;
+      margin-left: 0;
+      height: 90px;
+    }
+    @media screen and (max-width: 420px) {
+      width: 230px;
+      height: 40px;
+      padding: 0px;
+      top: 20px;
+      margin: 0 auto;
+    }
+  }
+  .fraction {
+    @include roboto(normal, 22px, 40px, 2px, #ffffff);
+    display: flex;
+    text-transform: uppercase;
+    @media screen and (max-width: 1024px) {
+      margin-left: 30px;
+      font-size: 22px;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 16px;
+      margin-right: 25px;
+      margin-left: 0px;
+    }
+    .current {
+      margin-right: 10px;
+      @media screen and (max-width: 420px) {
+        margin-right: 0px;
+      }
+    }
+
+    .separator {
+      margin-right: 10px;
+      @media screen and (max-width: 420px) {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+  .swiper-pagination-bullet {
+  margin-right: 25px;
+}
+.swiper-pagination {
+  position: static;
+  width: 180px !important;
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 420px) {
+    margin-right: 20px;
+  }
+  span {
+    margin-right: 0px !important;
+  }
+}
+.swiper-pagination-bullet {
+  background: #ffffff;
+  width: 16px;
+  height: 16px;
+  border-radius: 0%;
+  opacity: 1;
+  @media screen and (max-width: 1024px) {
+    width: 12px;
+    height: 12px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 7px;
+    height: 7px;
+  }
+}
+.swiper-pagination-bullet-active {
+  background: #d2b183;
+}
+.swiper-buttons {
+  display: flex;
+  width: 80px;
+  @media screen and (max-width: 420px) {
+    width: 60px;
+  }
+}
+.swiper-button-prev,
+.swiper-button-next {
+  background: transparent;
+  border: none;
+  position: static;
+  width: 50px;
+  height: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  margin-top: 0px;
+  @media screen and (max-width: 420px) {
+    width: 30px;
+  }
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: "none";
+  all: unset;
+}
+.swiper-button-prev path:hover,
+.swiper-button-next path:hover {
+  fill: #d2b183;
+}
+
+.swiper-button-next img {
+  transform: rotate(180deg);
+}
