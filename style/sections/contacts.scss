@@ -1,0 +1,152 @@
+.contacts {
+  width: 100%;
+  .contacts_wrapper {
+    @include wrapper();
+    padding-top: 75px;
+    padding-bottom: 81px;
+    @media screen and (max-width: 1024px) {
+      max-width: 984px;
+      padding-top: 55px;
+      padding-bottom: 69px;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 728px;
+      padding-top: 40px;
+      padding-bottom: 47px;
+    }
+    @media screen and (max-width: 420px) {
+      max-width: 380px;
+      padding-bottom: 20px;
+    }
+    .h2_light {
+      font-family: Forum;
+      font-style: normal;
+      font-weight: normal;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin: 0 auto;
+      font-size: 80px;
+      color: #9d8665;
+      line-height: 90px;
+      margin: 0;
+      @media screen and (max-width: 1024px) {
+        font-size: 50px;
+        line-height: 75px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+        line-height: 60px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+
+    .visiting_line {
+      position: relative;
+      margin-bottom: 102px;
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 85px;
+      }
+      @media screen and (max-width: 768px) {
+        margin-bottom: 63px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -29px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: #710707;
+        @media screen and (max-width: 1024px) {
+          bottom: -23px;
+        }
+      }
+    }
+  }
+}
+.contacts_block {
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    margin-bottom: 26px;
+  }
+  .contacts_text {
+    display: flex;
+    flex-direction: column;
+    @media screen and (max-width: 768px) {
+      margin-bottom: 25px;
+    }
+    .contacts_title {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 28px;
+      line-height: 33px;
+      color: #000000;
+      margin: 0;
+      margin-bottom: 1px;
+      @media screen and (max-width: 1024px) {
+        font-size: 24px;
+        line-height: 28px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 20px;
+        line-height: 23px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+    }
+    .contacts-title {
+      margin-bottom: 50px;
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 35px;
+      }
+    }
+    .contacts_info {
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 26px;
+      color: #000000;
+      margin-bottom: 25px;
+      text-decoration: none;
+      @media screen and (max-width: 1024px) {
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 15px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+        line-height: 21px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 16px;
+        line-height: 19px;
+      }
+      span {
+        margin-left: 5px;
+      }
+    }
+  }
+}
+#map {
+  width: 960px;
+  height: 620px;
+  @media screen and (max-width: 1024px) {
+    max-width: 694px;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 728px;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
