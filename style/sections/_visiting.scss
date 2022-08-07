@@ -1,0 +1,166 @@
+@import "./../abstracts/abstracts";
+.visiting {
+  width: 100%;
+  .visiting_wrapper {
+    @include wrapper();
+    padding-top: 75px;
+    margin-bottom: 70px;
+    @media screen and (max-width: 1024px) {
+      max-width: 984px;
+      padding-top: 60px;
+      margin-bottom: 60px;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 728px;
+      padding-top: 40px;
+      margin-bottom: 80px;
+    }
+    @media screen and (max-width: 420px) {
+      max-width: 380px;
+      margin-bottom: 40px;
+    }
+
+    .h2_light {
+      @include forum($color: #9d8665);
+      margin: 0;
+      transform: translate(-100%, 0px);
+      opacity: 0;
+      transition: all 0.8s ease 0s;
+      &._active {
+        transform: translate(0px, 0px);
+        opacity: 1;
+      }
+      @media screen and (max-width: 1024px) {
+        font-size: 50px;
+        line-height: 75px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 40px;
+        line-height: 60px;
+      }
+      @media screen and (max-width: 420px) {
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+
+    .visiting_line {
+      position: relative;
+      margin-bottom: 102px;
+      @media screen and (max-width: 1024px) {
+        margin-bottom: 85px;
+      }
+      @media screen and (max-width: 768px) {
+        margin-bottom: 64px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -29px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: #710707;
+        @media screen and (max-width: 1024px) {
+          bottom: -25px;
+        }
+      }
+    }
+    .visiting_galery {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 73px;
+      column-gap: 60px;
+      justify-content: center;
+      @media screen and (max-width: 1024px) {
+        row-gap: 56px;
+        column-gap: 108px;
+      }
+      @media screen and (max-width: 768px) {
+        row-gap: 33px;
+        column-gap: 56px;
+      }
+      @media screen and (max-width: 420px) {
+        row-gap: 35px;
+      }
+      .visiting_card {
+        @media screen and (max-width: 1024px) {
+          width: 330px;
+        }
+        @media screen and (max-width: 768px) {
+          width: 280px;
+        }
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+      h3 {
+        @include forum($font-size: 32px, $color: #000000, $line-height: 35px);
+        margin-top: 25px;
+        margin-bottom: 25px;
+        @media screen and (max-width: 1024px) {
+          font-size: 28px;
+          line-height: 31px;
+          letter-spacing: 3px;
+          word-spacing: 2px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 22px;
+          line-height: 24px;
+        }
+        @media screen and (max-width: 420px) {
+          font-size: 18px;
+          line-height: 20px;
+          letter-spacing: 5px;
+        }
+      }
+    }
+  }
+}
+.visiting_card:hover .visiting_card_line::after {
+  width: 100%;
+}
+.visiting_card_line {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    width: 300px;
+    height: 3px;
+    background-color: #710707;
+    transition: all 0.9s ease;
+    @media screen and (max-width: 1024px) {
+      width: 150px;
+    }
+  }
+}
+.visiting_card_text {
+  @include roboto(200, 22px, 26px, 0px, #000000);
+  margin: 10px 0px;
+  @media screen and (max-width: 1024px) {
+    font-size: 20px;
+    line-height: 23px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    line-height: 21px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+.visiting_card-text {
+  @include roboto(200, 18px, 21px, 0px, #000000);
+  margin: 0;
+  @media screen and (max-width: 1024px) {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

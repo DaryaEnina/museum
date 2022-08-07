@@ -1,0 +1,652 @@
+.popap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 13;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.9s ease 0s;
+  overflow: auto;
+}
+.popap:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popap:target .popap__content {
+  opacity: 1;
+  transform: translate(0%, 0px);
+}
+.popap__body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+  .popap__content {
+    background-color: #ffffff;
+    color: #000000;
+    width: 1440px;
+    height: 845px;
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+    transform: translate(-100%, 0px);
+    overflow: auto;
+    @media screen and (max-width: 1024px) {
+      max-width: 1024px;
+      height: 768px;
+    }
+    @media screen and (max-width: 768px) {
+      max-width: 590px;
+      height: 1479px;
+    }
+    @media screen and (max-width: 420px) {
+      max-width: 320px;
+      height: 1754px;
+    }
+    .close {
+      margin-right: 2%;
+      margin-top: 30px;
+      display: flex;
+      justify-content: flex-end;
+      @media screen and (max-width: 768px) {
+        margin-right: 5%;
+      }
+    }
+    .popap__wrapper {
+      max-width: 970px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 36px;
+      @media screen and (max-width: 1024px) {
+        margin-top: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-width: 530px;
+      }
+      @media screen and (max-width: 420px) {
+        max-width: 320px;
+      }
+    }
+  }
+}
+.popap__form h4 {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 55px;
+  text-transform: uppercase;
+  color: #9d8665;
+  margin-bottom: 13px;
+  letter-spacing: 0px;
+  margin-top: -4px;
+  @media screen and (max-width: 768px) {
+    margin-top: 0px;
+    margin-bottom: 19px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 32px;
+    line-height: 35px;
+  }
+}
+.popap__form {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #710707;
+  width: 400px;
+  @media screen and (max-width: 768px) {
+    max-width: 530px;
+    margin: 0 auto;
+    margin-bottom: 47px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 16px;
+    line-height: 21px;
+    max-width: 300px;
+  }
+}
+.popap__form-form {
+  @media screen and (max-width: 420px) {
+    max-width: 360px;
+  }
+}
+.popap__form_line {
+  position: relative;
+  margin-bottom: 72px;
+  @media screen and (max-width: 768px) {
+    margin-bottom: 54px;
+  }
+  @media screen and (max-width: 420px) {
+    margin-bottom: 50px;
+  }
+}
+
+.popap__form_line::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #710707;
+}
+
+.popap__form-date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    max-width: 470px;
+  }
+  @media screen and (max-width: 420px) {
+    max-width: 320px;
+    flex-direction: column;
+  }
+}
+.popap__form-date_container-date {
+  max-width: 190px;
+  height: 45px;
+  background-image: url(../assets/svg/date.svg);
+  background-repeat: no-repeat;
+  background-position: top 45% left 8%;
+  @media screen and (max-width: 768px) {
+    max-width: 251px;
+  }
+  @media screen and (max-width: 420px) {
+    max-width: 320px;
+    margin-bottom: 20px;
+    background-position: top 45% left 4%;
+  }
+}
+.popap__form-date-date,
+.popap__form-date-time {
+  max-width: 190px;
+  height: 45px;
+  background: transparent;
+  padding: 0;
+  padding-left: 42px;
+  background-image: url(../assets/svg/form-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: top 45% left 93%;
+  @media screen and (max-width: 420px) {
+    max-width: 320px;
+  }
+}
+.popap__form-date-date::placeholder,
+.popap__form-date-time::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  align-items: center;
+  color: #030303;
+}
+.popap__form-date-date::-webkit-calendar-picker-indicator {
+  background: transparent;
+}
+.popap__form-date_container-time {
+  max-width: 190px;
+  height: 45px;
+  background-image: url(../assets/svg/Time.svg);
+  background-repeat: no-repeat;
+  background-position: top 45% left 8%;
+}
+.popap__form-date-time::-webkit-calendar-picker-indicator {
+  background: transparent;
+}
+.popap__form-item-name {
+  background-color: #ffffff;
+  background-image: url(../assets/svg/name.svg);
+  background-repeat: no-repeat;
+  background-position: center left 15px;
+}
+.popap__form-item-email {
+  background-image: url(../assets/svg/email.svg);
+  background-repeat: no-repeat;
+  background-position: center left 15px;
+  background-color: #ffffff;
+}
+.popap__form-item-phone {
+  background-image: url(../assets/svg/tel.svg);
+  background-repeat: no-repeat;
+  background-position: center left 15px;
+  background-color: #ffffff;
+}
+.popap__form-item-type {
+  background-image: url(../assets/svg/type.svg);
+  background-repeat: no-repeat;
+  background-position: center left 15px;
+  background-color: #ffffff;
+}
+.popap__form-item {
+  width: 400px;
+  height: 45px;
+  margin-bottom: 20px;
+  background: inherit;
+  padding: 0px 43px;
+
+  @media screen and (max-width: 768px) {
+    max-width: 530px;
+  }
+  @media screen and (max-width: 420px) {
+    max-width: 300px;
+  }
+}
+
+.popap__form-item::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+.popap__form-line {
+  width: 371px;
+  height: 2px;
+  background: #740c11;
+  opacity: 0.9;
+  margin-top: 4px;
+  margin-bottom: 20px;
+  @media screen and (max-width: 420px) {
+    max-width: 275px;
+  }
+}
+.popap__form-count {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  text-transform: capitalize;
+  color: #9d8665;
+  border: 1px solid #030303;
+  box-sizing: border-box;
+  padding: 10px 15px 0px;
+  @media screen and (max-width: 420px) {
+    max-width: 300px;
+  }
+}
+.popap__form-type {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.popap__form-type p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.popap__form-amount_btn {
+  display: flex;
+  width: 105px;
+  height: 25px;
+  border: 2px solid #030303;
+}
+
+.popap__form-amount_btn input {
+  width: 38px;
+  height: 25px;
+}
+
+.popap__form-amount_btn_add {
+  background-color: #030303;
+  border-color: #030303;
+  width: 35px;
+}
+.btn-img-minus {
+  margin-bottom: 4px;
+}
+.btn-img-plus {
+  margin-left: 4px;
+  margin-bottom: 3px;
+}
+.popap__ticket {
+  border: 1px solid #030303;
+  box-sizing: border-box;
+  padding: 25px 30px;
+  max-width: 530px;
+  @media screen and (max-width: 768px) {
+    padding: 25px 15px;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 300px;
+  }
+}
+.popap__ticket_overview {
+  max-width: 470px;
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 768px) {
+    max-width: 500px;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 300px;
+  }
+}
+.overview {
+  margin-bottom: 20px;
+}
+.overview h4 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 37px;
+  color: #272727;
+  margin-bottom: 2px;
+}
+.overview__tour {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  color: #740c11;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+.overview__date,
+.overview__time,
+.overview__type {
+  display: flex;
+  margin-bottom: 5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 21px;
+  color: #030303;
+}
+.overview img {
+  margin-right: 15px;
+}
+.overview__img {
+  @media screen and (max-width: 768px) {
+    width: 120px;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.tickets__count {
+  display: flex;
+  justify-content: space-between;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+}
+.tickets__count-wrapper {
+  display: flex;
+}
+.tickets__count-count {
+  width: 32px;
+  height: 20px;
+  background-color: #030303;
+  font-size: 18px;
+  line-height: 21px;
+  color: #a4a4a3;
+  text-align: center;
+  margin-right: 10px;
+  margin-bottom: 11px;
+}
+.tickets__count-type {
+  font-size: 22px;
+  line-height: 26px;
+  color: #030303;
+}
+.tickets__count-total {
+  font-size: 22px;
+  line-height: 26px;
+  display: flex;
+  align-items: center;
+  color: #030303;
+}
+
+.popap__ticket-line {
+  position: relative;
+}
+
+.popap__ticket-line::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #710707;
+}
+.popap__ticket-total {
+  display: flex;
+  justify-content: space-between;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 37px;
+  color: #030303;
+  margin-top: 17px;
+  margin-bottom: 10px;
+  @media screen and (max-width: 420px) {
+    margin-bottom: 13px;
+  }
+}
+
+.popap__ticket-card-frond {
+  max-width: 360px;
+  height: 211px;
+  background: #bcbcbc;
+  z-index: 1;
+  float: left;
+  position: relative;
+  margin-bottom: 56px;
+  padding: 16px 21px;
+  display: flex;
+  @media screen and (max-width: 768px) {
+    width: 267px;
+    margin-bottom: 25px;
+  }
+  @media screen and (max-width: 320px) {
+    max-width: 265px;
+    padding: 16px 3px;
+  }
+}
+.popap__ticket-card-frond p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+  margin-bottom: 5px;
+}
+.card-frond_number {
+  max-width: 215px;
+  height: 35px;
+  background: #ffffff;
+  border: 0.5px solid #a4a4a3;
+}
+.card-frond_date {
+  display: flex;
+}
+.card-frond_month {
+  max-width: 100px;
+  height: 35px;
+  margin-right: 15px;
+  background: #ffffff;
+  border: 0.5px solid #a4a4a3;
+}
+.card-frond_year {
+  max-width: 100px;
+  height: 35px;
+  background: #ffffff;
+  border: 0.5px solid #a4a4a3;
+}
+.card-frond_cardholder {
+  max-width: 320px;
+  height: 35px;
+  background: #ffffff;
+  border: 0.5px solid #a4a4a3;
+  @media screen and (max-width: 420px) {
+    max-width: 287px;
+  }
+}
+.popap__ticket-card-frond_item {
+  margin-bottom: 10px;
+}
+.card-pic {
+  margin-left: 0px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 1024px) {
+    margin-left: 0px;
+  }
+  @media screen and (max-width: 320px) {
+    margin-left: 0px;
+  }
+}
+.card-pic img {
+  margin-bottom: 11px;
+}
+.popap__ticket-card-back {
+  position: absolute;
+  max-width: 360px;
+  min-width: 260px;
+  height: 211px;
+  background: #939393;
+  z-index: 0;
+  margin: 5% 7%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  @media screen and (max-width: 768px) {
+    position: static;
+    max-width: 330px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+}
+.popap__ticket-card-back-line {
+  width: 100%;
+  height: 45px;
+  background: #161615;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+.popap__ticket-card-back-CVC {
+  font-family: " Roboto ";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #161615;
+  margin-right: 34px;
+  margin-bottom: 6px;
+}
+.popap__ticket-card-back-input {
+  width: 75px;
+  height: 35px;
+  margin-right: 20px;
+  margin-bottom: 6px;
+}
+.popap__ticket-card-back-text {
+  width: 55px;
+  margin-right: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #161615;
+}
+.popap__ticket-button {
+  display: flex;
+  max-width: 220px;
+  min-width: 100px;
+  height: 45px;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #710707;
+  opacity: 0.9;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 26px;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  right: -70%;
+  top: 5%;
+  justify-content: center;
+  @media screen and (max-width: 768px) {
+    margin-left: -7%;
+    top: 0%;
+  }
+}
+
+.popap__ticket-button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -60px;
+  margin-top: -60px;
+  background: #c9c9c9;
+  border-radius: 100%;
+  opacity: 0.6;
+
+  transform: scale(0);
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+  }
+  20% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+.popap__ticket-button:not(:active):after {
+  animation: ripple 1s ease-out;
+}
+
+.popap__ticket-button:after {
+  visibility: hidden;
+}
+
+.popap__ticket-button:focus:after {
+  visibility: visible;
+}

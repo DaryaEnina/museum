@@ -1,0 +1,37 @@
+@mixin wrapper() {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@mixin forum($font-size: 80px, $color: #9d8665, $line-height: 90px) {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-size: $font-size;
+  color: $color;
+  line-height: $line-height;
+}
+@mixin roboto($weight, $size, $line-height, $space, $color) {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  letter-spacing: $space;
+  color: $color;
+}
+@mixin h2_light() {
+  font-family: Forum;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin: 0 auto;
+  font-size: 80px;
+  color: #9d8665;
+  line-height: 90px;
+  margin: 0;
+}
